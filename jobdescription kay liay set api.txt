@@ -1,0 +1,93 @@
+When you see instructions like:
+
+bash
+Copy
+Edit
+# On Linux/Mac
+export TOGETHER_AI_KEY=your_api_key_here
+
+# On Windows
+set TOGETHER_AI_KEY=your_api_key_here
+it means:
+
+✅ You are setting an environment variable called TOGETHER_AI_KEY on your operating system (Linux/Mac/Windows).
+✅ This environment variable stores your API key temporarily in your computer's memory so that your applications/scripts can access it securely, without hardcoding the key directly into your code.
+
+Why Do We Use Environment Variables for API Keys?
+Security: You should not write API keys directly into your code (e.g., api_key = "123abc") because it can be exposed if your code is shared or uploaded (like to GitHub).
+
+Separation of Configuration from Code: Environment variables keep secrets/configurations separate from your codebase.
+
+Flexibility: You can easily change keys without editing code — just change the environment variable.
+
+Best Practice: Professional applications, servers, and cloud platforms use environment variables for sensitive data like passwords, tokens, and API keys.
+
+Detailed Meaning of the Commands:
+1. For Linux or Mac (bash shell)
+bash
+Copy
+Edit
+export TOGETHER_AI_KEY=your_api_key_here
+export makes the variable TOGETHER_AI_KEY available to all child processes (any program you run after setting it).
+
+your_api_key_here is where you put your actual API key.
+
+🔵 Example:
+
+bash
+Copy
+Edit
+export TOGETHER_AI_KEY=AbC1234YourRealAPIKey
+Now if you run a Python script, Node.js app, or any other program, it can access TOGETHER_AI_KEY from the environment.
+
+2. For Windows (Command Prompt)
+bash
+Copy
+Edit
+set TOGETHER_AI_KEY=your_api_key_here
+set is the Windows equivalent command.
+
+Same idea: it temporarily saves the API key in the environment.
+
+🔵 Example:
+
+bash
+Copy
+Edit
+set TOGETHER_AI_KEY=AbC1234YourRealAPIKey
+Important: In Windows PowerShell, the command is a bit different. It would be:
+
+powershell
+Copy
+Edit
+$env:TOGETHER_AI_KEY="your_api_key_here"
+How You Access the Environment Variable in Code:
+Depending on your programming language, you read the environment variable like this:
+
+Python:
+
+python
+Copy
+Edit
+import os
+api_key = os.getenv('TOGETHER_AI_KEY')
+Node.js (JavaScript):
+
+javascript
+Copy
+Edit
+const apiKey = process.env.TOGETHER_AI_KEY;
+Bash Script:
+
+bash
+Copy
+Edit
+echo $TOGETHER_AI_KEY
+Additional Notes:
+Temporary: When you set the environment variable in a terminal, it only lasts for that session. If you close the terminal, it’s gone.
+
+Permanent Setting: If you want it permanently set (so you don't set it every time), you must add it to your profile file:
+
+Linux/Mac: Add the export ... line to your ~/.bashrc, ~/.bash_profile, or ~/.zshrc file.
+
+Windows: You can add environment variables permanently via System Properties → Environment Variables.

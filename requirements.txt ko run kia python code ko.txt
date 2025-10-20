@@ -1,0 +1,49 @@
+Since you're using Anaconda, the best and cleanest way to use Python 3.8 or higher is by creating a new environment instead of changing your system Python. It’s safe and easy.
+
+✅ Step-by-Step Python 3.10 Anaconda Environment Setup
+Open Anaconda Prompt (not regular CMD).
+
+Create a new environment with Python 3.10
+
+conda create -n jobmatchenv python=3.10
+jobmatchenv is the name of your new environment.
+
+python=3.10 will ensure it installs Python 3.10.
+
+Activate the environment
+
+conda activate jobmatchenv
+Go to your project folder
+
+
+cd CUsersPMYLSDesktopFYPjob-matching-api
+Install the required packages
+
+
+pip install -r requirements.txt
+That’s it! Your API project will now run in Python 3.10 with all compatible packages. 🎉
+
+💡 To Use This Environment Later
+Every time you want to work on your project
+
+Open Anaconda Prompt
+
+Run
+
+conda activate jobmatchenv
+
+
+
+
+
+
+
+
+C:\Users\PMYLS\Desktop\FYP\temp\job-candidate-matching
+
+
+uvicorn app.main:app --host 0.0.0.0 --port 7860 --reload 
+
+
+
+
